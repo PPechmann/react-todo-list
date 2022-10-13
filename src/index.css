@@ -1,13 +1,126 @@
-body {
+* {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  box-sizing: border-box;
+  font-size: 18px;
+  font-family: 'outfit', sans-serif;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 5rem;
+  background-color:  #081f37;
+}
+
+header {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 5rem;
+}
+
+h1 {
+  color: #5fc9f3;
+  font-size: 3rem;
+  text-shadow: 1px 1px 15px rgba(255, 255, 255, .4);
+}
+
+.addToDo-container {
+ display: flex;
+ align-items: center;
+ justify-content: space-between;
+ gap: 1rem;
+ border: 2px solid #5fc9f3;
+ border-radius: 15px;
+ height: 7rem;
+ width: 40rem;
+ padding: 2.5rem;
+ background-color: #2e79ba;
+ margin-bottom: 2rem;
+ box-shadow: 3px 3px 15px rgba(255, 255, 255, .4);
+} 
+
+
+.addToDo-button {
+  border: none;
+  padding: 1rem 3rem;
+  border-radius: 15px;
+  background-color: #081f37;
+  color: #fff;
+  height: 3rem;
+  box-shadow: 3px 3px 15px rgba(0, 0, 0, .4);
+} 
+
+.addToDo-button:hover {
+  cursor: pointer;
+}
+
+.addToDo-button:active {
+  box-shadow: 1px 1px 10px rgba(0, 0, 0, .4);
+  background-color: #1c6a80;
+}
+
+.addToDo-input {
+  border-radius: 15px;
+  padding: 1rem;
+  height: 3rem;
+  border: 1px solid #5fc9f3;
+}
+
+.addToDo-input:focus{
+  outline: none;
+}
+
+.toDoList-container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 40rem;
+  border: 2px solid #5fc9f3;
+  border-radius: 15px;
+  min-height: 10rem;
+  padding: 2.5rem;
+  background-color: #2e79ba;
+  box-shadow: 3px 3px 15px rgba(255, 255, 255, .4);
+}
+
+.toDo-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #5fc9f3;
+  height: 5rem;
+  width: 35rem;
+  border-radius: 15px;
+  box-shadow: 3px 3px 15px rgba(0, 0, 0, .4);
+  margin-bottom: 3rem;
+  padding: 1rem;
+  color: #fff;
+}
+
+
+
+.toDo-button {
+  border: none;
+  border-radius: 15px;
+  padding: .5rem 1rem;
+  background-color: #081f37;
+  color: #fff;
+  box-shadow: 3px 3px 15px rgba(0, 0, 0, .4);
+}
+
+.toDo-button:hover {
+  cursor: pointer;
+}
+
+.toDo-button:active {
+  box-shadow: 1px 1px 10px rgba(0, 0, 0, .4);
+  background-color: #1c6a80;
+}
+
+
+.done {
+  text-decoration: line-through;
 }

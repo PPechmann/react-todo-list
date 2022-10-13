@@ -1,23 +1,35 @@
-import logo from './logo.svg';
-import './App.css';
+import AddToDo from "./components/AddToDo";
+import ToDoList from "./components/ToDoList";
+import Header from "./components/Header";
+import { useState } from "react"
 
 function App() {
+
+  const [input, setInput] = useState('')
+  const [list, setList] = useState([])
+
+
+  const handleInput = (e) => {
+      setInput(e.target.value)
+  }
+
+  const handleAddTodo = () => {
+      setList(prevList => prevList = [ ...prevList, input])
+      setInput('')
+  }
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+     <Header /> 
+     <AddToDo 
+      handleInput={handleInput}
+      handleAddTodo={handleAddTodo}
+      input={input}
+     />
+     <ToDoList 
+      list={list}
+      text={list}
+     />
     </div>
   );
 }
