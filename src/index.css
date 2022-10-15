@@ -98,6 +98,7 @@ h1 {
   margin-bottom: 3rem;
   padding: 1rem;
   color: #fff;
+  transition: all .5s;
 }
 
 
@@ -106,7 +107,7 @@ h1 {
   border: none;
   border-radius: 15px;
   padding: .5rem 1rem;
-  background-color: #081f37;
+  background-color: #1e69b0;
   color: #fff;
   box-shadow: 3px 3px 15px rgba(0, 0, 0, .4);
 }
@@ -123,4 +124,14 @@ h1 {
 
 .done {
   text-decoration: line-through;
+  color: #000;
+}
+
+.done-bg {
+  background-color: #1e69b0;
+}
+
+.button-done {
+  background-color: #5fc9f3;
+  color: #000;
 }

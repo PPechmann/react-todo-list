@@ -1,12 +1,13 @@
 import ToDo from "./ToDo"
 
-const ToDoList = ({ list, text } ) => {
+const ToDoList = ({ list } ) => {
+    
     return (
     <div className="toDoList-container">
-        {list.map((text) => {
+        {list.map((item) => {
            return (
             <ToDo 
-            text={text}
+            list={list}
             />
            )
         })}
