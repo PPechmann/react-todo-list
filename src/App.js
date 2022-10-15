@@ -1,7 +1,7 @@
 
 
 import Header from "./components/Header";
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { nanoid } from "nanoid"
 import AddToDo from "./components/AddToDo";
 import ToDoList from "./components/ToDoList";
@@ -10,6 +10,17 @@ function App() {
 
   const [input, setInput] = useState('')
   const [list, setList] = useState([])
+
+   useEffect(() => {
+    const listData = localStorage.getItem('to-do-list-items')
+    if(listData !== 0){
+      setList(JSON.parse(listData))
+    }
+  }, [])
+ 
+  useEffect(() => {
+    localStorage.setItem('to-do-list-items', JSON.stringify(list))
+  }, [list])
 
   const handleAddTodo = (e) => {
 
@@ -27,6 +38,7 @@ function App() {
       setList(list.map((item) => 
       item.id === id ? {...item, isDone: !item.isDone}
       :item))
+      console.log(list.leng)
   }
 
   const saveInput = (e) => {
@@ -35,9 +47,14 @@ function App() {
 
   const deleteItem = (id) => {
     setList(list.filter((item) => item.id !== id))
-    
-    }
+  }
 
+  const clearAll = () => {
+    
+    if (window.confirm("Are you sure you want to permanently delete all items?")) {
+      setList([])
+    }
+  }
 
 
   return (
@@ -55,6 +72,7 @@ function App() {
         list={list}
         toggleDone={toggleDone}
         deleteItem={deleteItem}
+        clearAll={clearAll}
         />
 
     </div>
