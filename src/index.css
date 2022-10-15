@@ -101,6 +101,11 @@ h1 {
   transition: all .5s;
 }
 
+.toDo-buttonContainer {
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+}
 
 
 .toDo-button {
@@ -119,6 +124,10 @@ h1 {
 .toDo-button:active {
   box-shadow: 1px 1px 10px rgba(0, 0, 0, .4);
   background-color: #1c6a80;
+}
+
+.delete-button:hover {
+  cursor: pointer;
 }
 
 

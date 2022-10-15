@@ -1,14 +1,15 @@
 
 
-const AddToDo = ( {handleAddTodo, handleInput, input} ) => {
+const AddToDo = ( {handleAddTodo, input, saveInput} ) => {
 
+    
     return (
         <div className="addToDo-container"> 
             <input 
                 className="addToDo-input"
                 type="text" 
                 placeholder="Add Todo"
-                onChange={handleInput}
+                onChange={saveInput}
                 value={input}
                 />
             <button 

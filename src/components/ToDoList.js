@@ -1,16 +1,18 @@
 import ToDo from "./ToDo"
 
-const ToDoList = ({ list } ) => {
+const ToDoList = ({ list, toggleDone, deleteItem } ) => {
     
     return (
     <div className="toDoList-container">
-        {list.map((item) => {
-           return (
+        {list.map((item => {
+          return (
             <ToDo 
-            list={list}
+                item={item}
+                toggleDone={toggleDone}
+                deleteItem={deleteItem}
             />
-           )
-        })}
+                )
+        }))}
     </div>
     )
 }
